@@ -35,3 +35,4 @@ input[type="submit"]:hover {
     background: -o-linear-gradient(top, #eee, #ccc);
     background: linear-gradient(top, #eee, #ccc);
     border: 1px solid #bbb;
+}
