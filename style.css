@@ -1,38 +1,71 @@
-#formKomentar{
-    border: 5px solid #d1d1d1;
-    width:500px;
-    padding:10px;
-}
-input, textarea{
-    padding: 10px;
-    border:3px solid #e6e6e6;
-    border-radius: 5px;
-    margin-bottom: 15px; 
-}
-input:focus, textarea:focus{
-    border:3px solid #5E4F4F;
-}
- 
-textarea{
-    width:300px;
-}
-input[type="submit"]{
-    cursor: pointer;
-    background: -webkit-linear-gradient(top, #efefef, #ddd);
-    background: -moz-linear-gradient(top, #efefef, #ddd);
-    background: -ms-linear-gradient(top, #efefef, #ddd);
-    background: -o-linear-gradient(top, #efefef, #ddd);
-    background: linear-gradient(top, #efefef, #ddd);
-    color: #333;
-    text-shadow: 0px 1px 1px rgba(255,255,255,1);
+/* Styling for form */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}  
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
     border: 1px solid #ccc;
-}
-
-input[type="submit"]:hover {
-    background: -webkit-linear-gradient(top, #eee, #ccc);
-    background: -moz-linear-gradient(top, #eee, #ccc);
-    background: -ms-linear-gradient(top, #eee, #ccc);
-    background: -o-linear-gradient(top, #eee, #ccc);
-    background: linear-gradient(top, #eee, #ccc);
-    border: 1px solid #bbb;
-}
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  input[type="button"],
+  input[type="reset"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  input[type="button"]:hover,
+  input[type="reset"]:hover {
+    background-color: #0056b3;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 20px 0;
+  }
+  
+  /* Styling for button */
+  #button, #clear {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #button:hover, #clear:hover {
+    background-color: #0056b3;
+  }
+  
