@@ -1,103 +1,164 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tutorial Belajar JavaScript</title>
- 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" integrity="sha512-7H86bHCND1+ZlgF4eQLjA9u0nKM8AevsdZS5F/CF5HMY8Bhp/EMTtBJaWBfJbjczbq4CCkFbH35y5zjDGL5Gww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+  body {
+      background-color: #1a202c;
+      font-family: 'Roboto', sans-serif;
+      color: #e2e8f0;
+  }
+  #formKomentar {
+      border: 5px solid #2d3748;
+      width: 500px;
+      padding: 10px;
+      background-color: #2d3748;
+      margin: auto;
+      border-radius: 10px;
+  }
+  input, textarea {
+      padding: 10px;
+      border: 3px solid #4a5568;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      width: calc(100% - 26px);
+      background-color: #2d3748;
+      color: #e2e8f0;
+  }
+  input:focus, textarea:focus {
+      border-color: #5e4f4f;
+      outline: none;
+  }
+  textarea {
+      width: calc(100% - 26px);
+      height: 150px;
+  }
+  input[type="submit"], input[type="reset"] {
+      cursor: pointer;
+      background: -webkit-linear-gradient(top, #4a5568, #2d3748);
+      background: -moz-linear-gradient(top, #4a5568, #2d3748);
+      background: -ms-linear-gradient(top, #4a5568, #2d3748);
+      background: -o-linear-gradient(top, #4a5568, #2d3748);
+      background: linear-gradient(top, #4a5568, #2d3748);
+      color: #e2e8f0;
+      text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+      border: 1px solid #2d3748;
+      border-radius: 5px;
+  }
+  input[type="submit"]:hover, input[type="reset"]:hover {
+      background: -webkit-linear-gradient(top, #2d3748, #4a5568);
+      background: -moz-linear-gradient(top, #2d3748, #4a5568);
+      background: -ms-linear-gradient(top, #2d3748, #4a5568);
+      background: -o-linear-gradient(top, #2d3748, #4a5568);
+      background: linear-gradient(top, #2d3748, #4a5568);
+      border: 1px solid #2d3748;
+  }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js" integrity="sha512-NONf9fy1zhm+xA9BbE5yf5O06t1IT1IeFbMQN3l5sU+eX6xw3J7o8I0eOg1fM4M9mkN6aS2igX1bD3CcpkL58g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script>
 function tampilkan(){
- 
-  var nama_kota=document.getElementById("form1").select1.value;
-  var p_kontainer=document.getElementById("container");
- 
-  if (nama_kota=="jakarta")
-    {
+    var nama_kota=document.getElementById("form1").select1.value;
+    var p_kontainer=document.getElementById("container");
+
+    if (nama_kota=="jakarta") {
         p_kontainer.innerHTML="Jakarta Ibu kota Republik Indonesia";
     }
-  else if (nama_kota=="bandung")
-    {
+    else if (nama_kota=="bandung") {
         p_kontainer.innerHTML="Bandung kota kembang";
     }
-  else if (nama_kota=="bogor")
-    {
+    else if (nama_kota=="bogor") {
         p_kontainer.innerHTML="Bogor kota hujan";
     }
 }
 </script>
 </head>
-<body>
-<h2>Menampilkan Hasil Form HTML dengan JavaScript</h2>
- 
-<form id="form1" name="form1" onsubmit="return false">
-  <label for="select1">Pilih Kota: </label>
-  <select id="select1" name="select1">
-    <option value="jakarta">Jakarta</option>
-    <option value="bandung">Bandung</option>
-    <option value="bogor">Bogor</option>
-  </select>
-  <input type="submit" value="Tampilkan Keterangan" onclick="tampilkan()">
-</form>
- 
-<p id="container"></p>
- 
+
+<body class="p-10 text-gray-100" onload="AOS.init();">
+<div class="container mx-auto">
+    <h2 class="text-2xl font-bold mb-4 text-center" data-aos="fade-down">Menampilkan Hasil Form HTML dengan JavaScript</h2>
+
+    <form id="form1" name="form1" onsubmit="return false" class="mb-4 mx-auto w-full max-w-sm" data-aos="fade-up" data-aos-delay="200">
+        <label for="select1" class="block mb-2">Pilih Kota: </label>
+        <div class="flex items-center mb-4">
+            <select id="select1" name="select1" class="flex-grow mr-2 border rounded-lg bg-gray-800 text-white p-2">
+                <option value="jakarta">Jakarta</option>
+                <option value="bandung">Bandung</option>
+                <option value="bogor">Bogor</option>
+            </select>
+            <input type="submit" value="Tampilkan" onclick="tampilkan()" class="bg-blue-500 text-white px-4 py-2 rounded-lg">
+        </div>
+    </form>
+
+    <p id="container" class="mb-4 p-4 border rounded-lg bg-gray-800 text-white text-center" data-aos="fade-up" data-aos-delay="400"></p>
+
+    <form id="formKomentar" class="mb-4 mx-auto" data-aos="fade-up" data-aos-delay="600">
+        <h1 class="text-xl font-bold mb-2 text-center">Silahkan berikan komentar anda</h1>
+        <div class="mb-4">
+            <label for="teks" class="block mb-2">Nama Anda :</label>
+            <input type="text" name="text" id="teks" class="w-full p-2 border rounded-lg bg-gray-800 text-white">
+        </div>
+        <div class="mb-4">
+            <label for="kepala" class="block mb-2">Komentar :</label>
+            <textarea rows="12" name="b" id="kepala" class="w-full p-2 border rounded-lg bg-gray-800 text-white"></textarea>
+        </div>
+        <div class="text-center">
+            <input type="button" onclick="kirim()" value="Komentar" class="bg-blue-500 text-white px-4 py-2 rounded-lg mr-2">
+            <input name="Clear" type="reset" value="Batal" class="bg-gray-500 text-white px-4 py-2 rounded-lg">
+        </div>
+    </form>
+
+    <hr class="border border-gray-700 my-4" data-aos="fade-up" data-aos-delay="800">
+    <hr class="border border-gray-700 my-4" data-aos="fade-up" data-aos-delay="800">
+
+    <script type="text/javascript" id="abc">
+        function kirim() {
+            var a=document.getElementById("abc").innerHTML;
+            var b=document.getElementById("teks").value;
+            var c=document.getElementById("kepala").value;
+            document.write(a + "<br>" + "<br>");
+            document.write(b + "<br>");
+            document.write(c);
+        }
+    </script>
+
+    <div class="text-center mb-4" data-aos="fade-up" data-aos-delay="1000">
+        <p>Anda sudah menekan tombol sebanyak <span id="count" class="font-bold"></span> kali</p>
+        <button id="button" class="bg-blue-500 text-white px-4 py-2 rounded-lg mr-2">Click Disini!</button>
+        <button id="clear" class="bg-gray-500 text-white px-4 py-2 rounded-lg">Hapus Storage</button>
+    </div>
+
+    <script>
+        const cacheKey = "NUMBER";
+        if (typeof(Storage) !== "undefined") {
+
+            if (localStorage.getItem(cacheKey) === "undefined") {
+                localStorage.setItem(cacheKey, 0);
+            }
+
+            const button = document.querySelector("#button");
+            const clearButton = document.querySelector("#clear")
+            const count = document.querySelector("#count");
+            button.addEventListener('click', function(event) {
+                let number = localStorage.getItem(cacheKey);
+                number++;
+                localStorage.setItem(cacheKey, number);
+                count.innerText = localStorage.getItem(cacheKey);
+            });
+
+            clearButton.addEventListener('click', function(event) {
+                localStorage.removeItem(cacheKey);
+            });
+        } else {
+            alert("Browser tidak mendukung Web Storage")
+        }
+    </script>
+</div>
 </body>
 </html>
-
-
-
-<form>
-    <h1>Silahkan berikan komentar anda</h1><br>
-    Nama Anda :<br>
-    <input type=text name="text" id="teks" size="35"><br> 
-    Komentar :</br>
-    <textarea rows="12" name="b" id="kepala" cols="35" wrap="virtual"></textarea><br>
-    <input type="button" onclick="kirim()" value="Komentar">
-    <input name="Clear" type="reset" value="Batal">
-    </form><br>
-    <hr style="border: 1px dashed black;"></hr>
-    <hr></hr>
-
-<script type="text/javascript" id="abc">
-    function kirim() {
-     var a=document.getElementById("abc").innerHTML;
-     var b=document.getElementById("teks").value;
-     var c=document.getElementById("kepala").value;
-     document.write(a + "<br>" + "<br>");
-     document.write(b + "<br>");
-     document.write(c);
-     
-  }
-</script>
-
-
-<p>Anda sudah menekan tombol sebanyak <span id="count"></span> kali</p>
-   <button id="button">Click Disini!</button>
-   <button id="clear">Hapus Storage</button>
- 
-   <script>
-       const cacheKey = "NUMBER";
-       if (typeof(Storage) !== "undefined") {
- 
-           // pengecekkan apakah data sessionStorage dengan key NUMBER tersedia atau belum
-           if (localStorage.getItem(cacheKey) === "undefined") {
-               // Jika belum maka akan atur dengan nilai awal yakni 0
-               localStorage.setItem(cacheKey, 0);
-           }
- 
-           const button = document.querySelector("#button");
-           const clearButton = document.querySelector("#clear")
-           const count = document.querySelector("#count");
-           button.addEventListener('click', function(event) {
-               let number = localStorage.getItem(cacheKey);
-               number++;
-               localStorage.setItem(cacheKey, number);
-               count.innerText = localStorage.getItem(cacheKey);
-           });
- 
-           clearButton.addEventListener('click', function(event) {
-               localStorage.removeItem(cacheKey);
-           });
-       } else {
-           alert("Browser tidak mendukung Web Storage")
-       }
-
-   </script>
