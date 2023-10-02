@@ -24,17 +24,17 @@ function tampilkan(){
 }
 </script>
 </head>
-<body>
-<h2>Menampilkan Hasil Form HTML dengan JavaScript</h2>
+<body style="background-color: aliceblue;">
+<h2 style="color: rgb(23, 49, 113); text-align: center; padding: 20px;">Menampilkan Hasil Form HTML dengan JavaScript</h2>
  
-<form id="form1" name="form1" onsubmit="return false">
-  <label for="select1">Pilih Kota: </label>
+<form id="form1" name="form1" onsubmit="return false" style="text-align: center; color: rgb(46, 56, 72);">
+  <label for="select1"  style="color: rgb(27, 33, 33);">Pilih Kota: </label>
   <select id="select1" name="select1">
-    <option value="jakarta">Jakarta</option>
-    <option value="bandung">Bandung</option>
-    <option value="bogor">Bogor</option>
+    <option value="jakarta" style="color: rgb(27, 33, 33);">Jakarta</option>
+    <option value="bandung"  style="color: rgb(27, 33, 33);">Bandung</option>
+    <option value="bogor"  style="color: rgb(27, 33, 33);">Bogor</option>
   </select>
-  <input type="submit" value="Tampilkan Keterangan" onclick="tampilkan()">
+  <input type="submit" value="Tampilkan Keterangan" onclick="tampilkan()"  style="color: rgb(27, 33, 33);">
 </form>
  
 <p id="container"></p>
@@ -44,14 +44,14 @@ function tampilkan(){
 
 
 
-<form>
-    <h1>Silahkan berikan komentar anda</h1><br>
-    Nama Anda :<br>
-    <input type=text name="text" id="teks" size="35"><br> 
-    Komentar :</br>
-    <textarea rows="12" name="b" id="kepala" cols="35" wrap="virtual"></textarea><br>
-    <input type="button" onclick="kirim()" value="Komentar">
-    <input name="Clear" type="reset" value="Batal">
+<form style="text-align: center; background-color: aliceblue;">
+    <h1  style="color: rgb(20, 15, 81); text-align: center;">Silahkan berikan komentar anda</h1><br>
+ <span style="color: rgb(104, 26, 167); text-align: center;">   Nama Anda :</span><br><br>
+    <input type=text name="text" id="teks" size="35"><br> <br>
+<span style="color: rgb(104, 26, 167); text-align: center;">    Komentar :</span></br><br>
+    <textarea rows="12" name="b" id="kepala" cols="35" wrap="virtual" style="color: rgb(104, 26, 167); text-align: start;"></textarea><br><br>
+    <input type="button" onclick="kirim()" value="Komentar" style="color: rgb(220, 216, 224); text-align: center; background: rgb(48, 48, 48);">
+    <input name="Clear" type="reset" value="Batal" style="color: rgb(237, 229, 243); text-align: center; background: rgb(48, 48, 48);">
     </form><br>
     <hr style="border: 1px dashed black;"></hr>
     <hr></hr>
@@ -69,9 +69,11 @@ function tampilkan(){
 </script>
 
 
-<p>Anda sudah menekan tombol sebanyak <span id="count"></span> kali</p>
-   <button id="button">Click Disini!</button>
-   <button id="clear">Hapus Storage</button>
+<p style="color: rgb(80, 2, 152); text-align: center;">Anda sudah menekan tombol sebanyak <span id="count"></span> kali</p>
+<div style="align-items: center; display: flex; justify-content: center; padding: 10px;">
+  <button id="button" style="color: rgb(241, 238, 245); text-align: center; background-color: black; margin: 10px;">Click Disini!</button>
+  <button id="clear" style="color: rgb(240, 238, 242); text-align: center; background-color: black;">Hapus Storage</button>
+</div>
  
    <script>
        const cacheKey = "NUMBER";
